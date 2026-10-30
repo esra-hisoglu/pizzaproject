@@ -1,97 +1,686 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.head{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
   text-align: center;
+  color: white;
+  width: 90%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.head h2{
+  color: white;
+  font-family: "Barlow", sans-serif;
+  font-size: 24px;
+  margin-bottom: 35px;
+  font-weight: 700;
 }
 
-.card {
-  padding: 2em;
+.head h3{
+  font-family: "Satisfy", cursive;
+  color: #FDC913;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
 }
 
-.read-the-docs {
-  color: #888;
+.head h1{
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.05;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.head button{
+  padding: 15px 40px;
+  margin-top: 20px;
+  background-color: #FDC913;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: white;
+  padding: 15px 20px;
+  min-height: 90px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.item a {
+  text-decoration: none;
+  color: #292929;
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+
+.kampanyalar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 160px 160px;
+  gap: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.buyuk-kart {
+  grid-row: 1 / 3;
+}
+
+.kart {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.kart img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kart-yazi{
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  color: white !important;
+}
+
+.buyuk-kart h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  color: white !important;
+}
+
+.buyuk-kart p {
+  font-size: 14px;
+  margin-bottom: 18px;
+  color: white !important;
+}
+
+.burger-kart h1 {
+  font-size: 23px;
+  line-height: 1.4;
+  color: white !important;
+}
+
+.kurye-kart h1 {
+  font-size: 22px;
+  line-height: 1.4;
+  top: 25px;
+  color: #292929;
+}
+
+.kart button {
+  background-color: white;
+  color: #ce2829;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 22px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+
+.container2 h2{
+  color: #CE2829;
+  font-family: "Satisfy", cursive;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.container2 h1{
+  color: #292929;
+  font-family: "Barlow", sans-serif;
+  font-size: 28px;
+  font-weight: 650;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+.menu2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: #FAF7F2;
+  padding: 10px;
+  max-width: 600px;
+}
+
+.item2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px 18px;
+}
+
+.item2 img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.item2 a{
+  text-decoration: none;
+  color: #292929;
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.item2:hover{
+  background-color: black;
+}
+
+.item2:hover a{
+  color: white;
+}
+
+
+.container2{
+  background-color: #FAF7F2;
+  width: auto;
+  padding-top: 20px;
+}
+
+
+.onizleme {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.food1,
+.food2,
+.food3 {
+  flex: 1;
+  min-width: 0;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+}
+
+.onizleme img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.onizleme h1 {
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.onizleme p {
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  color: #5F5F5F;
+  word-spacing: 20px;
+}
+
+.urun-bilgi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 45px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  max-width: 770px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* İletişim alanı */
+.iletisim h1 {
+  font-family: "Barlow", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.iletisim ul {
+  list-style: none;
+  padding: 0;
+}
+
+.iletisim li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.iletisim li img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.hot-menu h2,
+.instagram h2 {
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.hot-menu p {
+  font-family: "Barlow", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  white-space: normal;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.insta-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* En alt bölüm */
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding: 25px max(30px, calc((100% - 770px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+}
+
+
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
   }
-  a:hover {
-    color: #747bff;
+
+  .container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+    padding: 35px 25px;
+    justify-items: start;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .item a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .kampanyalar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 270px 220px 220px;
+    gap: 12px;
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .buyuk-kart {
+    grid-row: auto;
+  }
+
+  .kart {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .kart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .kart-yazi {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    text-align: left;
+  }
+
+  .buyuk-kart h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    color: white;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .buyuk-kart p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .burger-kart .kart-yazi {
+    top: 45px;
+    left: 25px;
+  }
+
+  .burger-kart h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    color: white;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .kurye-kart .kart-yazi {
+    top: 40px;
+    left: 25px;
+  }
+
+  .kurye-kart h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    color: #292929;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .kart button {
+    background-color: white;
+    color: #CE2829;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+
+  .container2 > h2 {
+    font-family: "Satisfy", cursive;
+    font-size: 24px;
+    font-weight: 400;
+    color: #CE2829;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .container2 > h1 {
+    font-family: "Barlow", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #292929;
+    text-align: center;
+    max-width: 330px;
+    margin: 0 auto 30px;
+  }
+
+  .menu2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 25px;
+    padding: 20px 25px 40px;
+    justify-items: center;
+  }
+
+  .item2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 15px;
+    border-radius: 30px;
+    background-color: white;
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .item2 img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+
+  .item2 a {
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #292929;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .item2:hover {
+    background-color: #292929;
+  }
+
+  .item2:hover a {
+    color: white;
+  }
+
+
+  .onizleme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+  .food1,
+  .food2,
+  .food3 {
+    width: 100%;
+    flex: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+  }
+
+  footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding-top: 40px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
+    width: 76%;
+    max-width: none;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+  /* İletişim bölümü */
+  .iletisim h1 {
+    font-family: "Barlow", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .iletisim li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .iletisim li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Hot Menu bölümü */
+  .hot-menu h2 {
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .hot-menu p {
+    font-family: "Barlow", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  /* Instagram bölümü */
+  .instagram h2 {
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .insta-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+
+  /* Footer en alt bölüm */
+  .footer-bottom {
+    border-top: 1px solid #333;
+    width: 76%;
+    margin: 0 auto;
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+  }
+
+  .footer-bottom span {
+    font-size: 16px;
   }
 }
